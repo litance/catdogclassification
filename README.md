@@ -10,6 +10,7 @@ Trained model：https://drive.google.com/file/d/1TGSMWplYMm_VNHXzAGRQZtSCy-UYIH6
 - tqdm
 - pillow
 - numpy
+- PyQt6
 
 ### 数据增强 Data Augmentation
 - Resize
@@ -21,6 +22,7 @@ Trained model：https://drive.google.com/file/d/1TGSMWplYMm_VNHXzAGRQZtSCy-UYIH6
 ```
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 pip install tqdm pillow numpy
+pip install PyQt6
 ```
 
 ## 2.配置好代码 Configure the code(main.py)
