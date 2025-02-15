@@ -3,6 +3,8 @@
 
 Trained model：https://drive.google.com/file/d/1TGSMWplYMm_VNHXzAGRQZtSCy-UYIH6l/view?usp=sharing
 
+DataSet: https://www.kaggle.com/datasets/tongpython/cat-and-dog?resource=download
+
 ### 所需要第三方库 Third-party libraries needed to run this program
 - torch
 - torchvision
