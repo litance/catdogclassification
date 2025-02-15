@@ -24,7 +24,6 @@ transform = transforms.Compose([
     transforms.Normalize([0.5], [0.5])
 ])
 
-
 # **4️⃣ GUI 界面**
 class CatDogClassifierApp(QWidget):
     def __init__(self):
