@@ -7,17 +7,17 @@ from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QFileDia
 from PyQt6.QtGui import QPixmap
 from PIL import Image
 
-# **1️⃣ 设备选择**
+# **1设备选择**
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-# **2️⃣ 加载训练好的模型**
+# **加载训练好的模型**
 model = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
 model.fc = nn.Linear(512, 2)  # 修改最后一层
 model.load_state_dict(torch.load("cat_dog_classifier.pth", map_location=device))
 model.to(device)
 model.eval()
 
-# **3️⃣ 图像预处理**
+# **图像预处理**
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
@@ -25,7 +25,7 @@ transform = transforms.Compose([
 ])
 
 
-# **4️⃣ GUI 界面**
+# **GUI 界面**
 class CatDogClassifierApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -70,7 +70,7 @@ class CatDogClassifierApp(QWidget):
     def predict(self):
         file_path = self.path_input.text()
         if not file_path:
-            self.label.setText("❌ 请选择或输入图片路径！")
+            self.label.setText("请选择或输入图片路径！")
             return
 
         image = Image.open(file_path).convert("RGB")
@@ -80,7 +80,7 @@ class CatDogClassifierApp(QWidget):
             output = model(image)
             _, predicted = torch.max(output, 1)
             label = "🐱 猫" if predicted.item() == 0 else "🐶 狗"
-            self.label.setText(f"✅ 预测结果: {label}")
+            self.label.setText(f"预测结果: {label}")
 
 
 # **运行应用**
