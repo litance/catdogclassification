@@ -111,6 +111,6 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
 # **运行训练**
 if __name__ == '__main__':
     train_model(model, train_loader, val_loader, criterion, optimizer, scheduler, epochs=10)
-    # 🔟 保存模型
+    #保存模型
     torch.save(model.state_dict(), "cat_dog_classifier.pth")
-    print("✅ 模型已保存为 'cat_dog_classifier.pth'")
+    print("模型已保存为 'cat_dog_classifier.pth'")
